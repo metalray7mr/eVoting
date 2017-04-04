@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    eVOTING
+                    Test Conflicts
                 </div>
 
                 <div class="links">
