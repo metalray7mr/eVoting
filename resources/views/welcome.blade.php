@@ -79,8 +79,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Test Conflicts
-                </div>
+                    Nothing
+                        </div>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">abcdefgh</a>
