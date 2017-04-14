@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Test Conflicts
+                    Test Conflicts abcd"master"
                 </div>
 
                 <div class="links">
