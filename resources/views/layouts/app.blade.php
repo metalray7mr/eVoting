@@ -12,6 +12,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style type="text/css">
+        .selfclass{
+            background: #D3D3D3;
+        }
+    </style>
 
     <!-- Scripts -->
     <script>
