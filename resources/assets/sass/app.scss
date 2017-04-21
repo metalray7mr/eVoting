@@ -1,4 +1,3 @@
-
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 
@@ -7,3 +6,106 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+#app {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  a{
+      >label {
+        text-decoration: none;
+      }
+    }
+    .navbar{
+    .container{
+      width: 100vw;
+      box-shadow: 0 2px 4px #aaa;
+    }
+    .navbar-header{
+        display: block;
+        text-align: center;
+        padding:0;
+        a {
+            margin:0;
+              display: block;
+            width: 100%;
+        }
+      }
+      .organization_logo {
+        height: 3em;
+        margin: 0.5em 15px;
+      }
+      
+    }
+
+    #app-container {
+      height: 100vh;
+      width: 100vw;
+      padding: 0;
+      margin: 0;
+      .announcements {
+        margin: 0.5em 0em;
+      }
+      &>.row{
+        display: flex;
+        height: 100vh;
+        margin:0;
+        .inner-left-container, .inner-right-container{
+          display:inline-block;
+          padding-top:6em;
+          padding-bottom:4em;
+          overflow-y:scroll; 
+        }
+        .inner-left-container {
+        background: $sidebar-bg;
+        padding-left:15px;
+        text-align:center;
+        .profile_img_sidebar {
+          width: 50%;
+            margin: 2em 0;
+            border-radius: 100%;
+            box-shadow: 0 0 5px #82888f;
+        }
+        .sidebar-nav{
+          a,a:hover,a:visited,a:active {
+            text-align:left;
+            display:block;
+            text-decoration: none;
+            border-radius: 5px;
+            color: #4d4d4d;
+            background-image: linear-gradient(#f0f2f5 10%,#e0e3e6 90%);
+            box-shadow: 0 1px 1px #898989;
+            width:80%;
+            padding:1em 2em;
+            margin:auto;
+            margin: 1em auto;
+          }
+        }
+        }
+        .inner-right-container {
+          padding-right:15px;
+        }
+      }
+
+      .main_heading {
+        border-bottom:1px solid #eeeeee;
+        display:inline-block;
+        padding-bottom:1em;
+        margin-bottom:1em
+      }
+
+      .chart_container {
+        width: 100%;
+        height: 200px;
+      }
+      .duediligence_form {
+        h3 {
+          cursor: pointer;
+        }
+        .panel-collapse {
+          padding-left: 15px;
+        }
+      }
+    }
+}
