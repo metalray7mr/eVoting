@@ -79,8 +79,14 @@
 
             <div class="content">
                 <div class="title m-b-md">
+                
+                E - Voting 
+                sdfge
+                sdf
+                sdf
+                sdf
+                sdf
 
-                    E - Voting
                 </div>
 
                 <div class="links">
