@@ -9,7 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+ 
         <!-- Styles -->
         <style>
             html, body {
@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Test Conflicts abcd"master"
+                    E-VOTING
                 </div>
 
                 <div class="links">
@@ -93,3 +93,13 @@
         </div>
     </body>
 </html>
+
+<style type="text/css">
+    
+    
+</style>
+
+<script type="text/javascript">
+    
+
+</script>

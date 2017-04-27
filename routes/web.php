@@ -11,6 +11,27 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});*/
+
+Route::get('/', function () {
+    return view('login');
+});
+
+/*Route::get('/customer',function(){
+	$customer = App\customer::find(1);
+	echo "<pre>";
+	print_r($customer);
+});
+*/
+
+
+//Auth::routes();
+
+//Route::get('/home', 'HomeController@index');
+Route::post('/loginme','logincontroller@login');
