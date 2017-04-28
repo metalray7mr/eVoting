@@ -1,3 +1,8 @@
+
+@extends('layouts.app')
+
+@section('content')
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,58 +11,27 @@
 <meta name ="viewport" content="width=device-width,initial-scale=1">
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<style type="text/css">
-		.selfclass{
-			border-left: 5px solid #D3D3D3 ;  
-			margin-left:10px;
-			background: #D3D3D3;
-
-		}
-		h3{
-			text-align: center;
-		
-		}
-		h1{
-			 margin-left: 200px;
-		
-		}
-				
-	</style>
+	
 </head>
 <body>
-<div class="page-header">
-<h1>VOTE</h1>
-</div>
+
 
 <div class="container">
 
-<nav class="navbar navbar-inverse">
-<div class="container-fluid">
-<div class="navbar-header">
-<a class="navbar-brand" href="tryingnew.html">EVOTING</a>
-</div>
-<ul class="nav navbar-nav">
-<li></li>
- <li> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</li>
 
- <li class="active"><a href="tryingnew.html">HOME</a></li>
- <li><a href = help.html>Help</a></li>
-<li><a href = about.html>About</a></li>
-<li><a href = logout.html>Logout</a></li>
-</ul>
-</div>
-</nav>
 
 
 <div class="rows">
 
 <div class="col-lg-3 col-md-3 col-sm-5 col-xs-8 col-lg-offset-3 ">
 <br/>
-&nbsp &nbsp  &nbsp &nbsp <img src="usericon.png" height="170" width="170" />
+&nbsp &nbsp  &nbsp &nbsp <img src="/pictures/usericon.png" height="170" width="170" />
 
-<br/><br/><br/><br/><br/><div class="input-group input-group-sm">
+<br/><br/><div class="input-group input-group-sm">
 <span class="input-group-addon">Name</span>
-<input type="text" name="" class="form-control" placeholder="Full Name">
+
+
+<input type="text" name="" class="form-control" placeholder="Full Name"  value=" {{Auth::user()->name }}">
 </div><br/>
 <div class = "input-group input-group-addon-sm">
 <span class="input-group-addon">Gender</span>
@@ -70,7 +44,7 @@
 </div><br/>
 <div class="input-group input-group-sm">
 <span class="input-group-addon">VOTER I.D.</span>
-<input type="number" name="" class="form-control" placeholder="Voter ID Number">
+<input type="text" name="" class="form-control" placeholder="Voter ID Number"  value=" {{Auth::user()->id}}">
 </div>
 </div>
 
@@ -80,18 +54,16 @@
 
 <h3> CAST YOUR VOTE</h3>
 
+
 <div class = "input-group input-group-sm">
 <span class = "input-group-addon">Vote For :</span>
 <select class="form-control">
-	<option value="party1">   </option>
-	<option value="party1">Party 1</option>
-	<option value="party2">Party 2</option>
-	<option value="party3">Party 3</option>
-	<option value="party4">Party 4</option>
-	<option value="party5">Party 5</option>
+	@foreach($party as $p)
+	<option value="{{$p['name']}}"> {{ $p['name'] }}</option>
+	@endforeach
 </select>
 </div><br/>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp<img src="brand.png" height="150" width="200" >
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp<img src="/pictures/brand.png" height="150" width="200" >
 <br/>
 <br/>
 <div class="input-group input-group-sm">
@@ -116,3 +88,5 @@
   <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
+
+@endsection

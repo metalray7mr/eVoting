@@ -12,6 +12,23 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<style type="text/css">
+        .selfclass{
+            border-left: 5px solid #D3D3D3 ;  
+            margin-left:10px;
+            background: #D3D3D3;
+
+        }
+        h3{
+            text-align: center;
+        
+        }
+        h1{
+             margin-left: 200px;
+        
+        }
+                
+    </style>
 
     <!-- Scripts -->
     <script>
@@ -35,7 +52,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" style="font-size:x-large;" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
@@ -52,6 +69,7 @@
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
+
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -70,6 +88,13 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+                                     <li>
+                                        <a href="/help"> Help </a>
+                                    </li>
+                                     <li>
+                                        <a href="/about">About</a>
+
+                                  </li>
                                 </ul>
                             </li>
                         @endif

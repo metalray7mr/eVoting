@@ -11,18 +11,18 @@
 |
 */
 
-/*Route::get('/', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-});*/
-
-Route::get('/', function () {
-    return view('login');
 });
 
+/*Route::get('/', function () {
+    return view('login');
+});
+*/
 /*Route::get('/customer',function(){
 	$customer = App\customer::find(1);
 	echo "<pre>";
@@ -31,7 +31,14 @@ Route::get('/', function () {
 */
 
 
-//Auth::routes();
+Auth::routes();
 
-//Route::get('/home', 'HomeController@index');
-Route::post('/loginme','logincontroller@login');
+Route::get('/home', 'HomeController@index');
+Route::get('/help', 'HomeController@help');
+Route::get('/about','HomeController@about');
+//Route::get('/demo', function() {
+	//$users = DB::table('users')->get();
+	//echo {{$users[0]->id}};
+
+
+//});

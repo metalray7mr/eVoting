@@ -17,7 +17,7 @@ class CreateVotersTable extends Migration
 
             $table->increments('id');
             $table->string('voter_name');
-            $table->interger('voterid');
+            $table->integer('voterid');
             $table->date('dob');
         });
     }
