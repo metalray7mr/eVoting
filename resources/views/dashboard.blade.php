@@ -11,8 +11,7 @@
 <meta name ="viewport" content="width=device-width,initial-scale=1">
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-	
+<style type="button.css"></style>
 </head>
 <body>
 
@@ -30,20 +29,20 @@
 
 <br/><br/><div class="input-group input-group-sm">
 <span class="input-group-addon">Name</span>
-<input type="text" name="" class="form-control" placeholder="Full Name">
+<input type="text" name="" class="form-control"  placeholder="{{Auth::user()->name }}">
 </div><br/>
-<div class = "input-group input-group-addon-sm">
+<div class = "input-group input-group-sm">
 <span class="input-group-addon">Gender</span>
-<input type="text" name="" class="form-control" placeholder="Gender">
+<input type="text" name="" class="form-control" placeholder="{{Auth::user()->Gender }}">
 </div><br/>
 
 <div class="input-group input-group-sm">
 <span class="input-group-addon">D.O.B.</span>
-<input type="date" name="" class="form-control" placeholder="Date of birth">
+<input type="" name="" class="form-control" placeholder="{{Auth::user()->dob }}">
 </div><br/>
 <div class="input-group input-group-sm">
 <span class="input-group-addon">VOTER I.D.</span>
-<input type="number" name="" class="form-control" placeholder="Voter ID Number">
+<input type="" name="" class="form-control" placeholder="{{Auth::user()->id }}">
 </div>
 </div>
 
@@ -53,32 +52,45 @@
 
 <h3> CAST YOUR VOTE</h3>
 
-<div class = "input-group input-group-sm">
+<div id=voteindex class = "input-group input-group-sm">
 <span class = "input-group-addon">Vote For :</span>
-<select class="form-control">
-	<option value="party1">   </option>
-	<option value="party1">Party 1</option>
-	<option value="party2">Party 2</option>
-	<option value="party3">Party 3</option>
-	<option value="party4">Party 4</option>
-	<option value="party5">Party 5</option>
+
+</div>
+<select class="form-control" class = "input-group-addon" onchange="document.getElementById('preview').src = this.value">
+	<option value="">   </option>
+    <option value="pictures/1.ico">Party 1</option>
+    <option value="pictures/2.ico">Party 2</option>
+    <option value="pictures/3.ico">Party 3</option>
+    <option value="pictures/4.ico">Party 4</option>
+    <option value="pictures/5.ico">Party 5</option>
+    <option value="pictures/6.ico">Party 6</option>
 </select>
-</div><br/>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp<img src="pictures/brand.ico" height="150" width="200" >
-<br/>
-<br/>
-<div class="input-group input-group-sm">
-<span class = "input-group-addon">DATE</span>
-<input type="date" class="form-control" name="">
-</div><br/>
-<div class="input-group input-group-sm">
-<span class = "input-group-addon">TIME</span>
-<input type="time" class="form-control" name="">
-</div><br/>
-<br/>
+
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp<img id="preview" height="150" width="150">
+
 <br/>
 
-<button type="submit" class="btn btn-default btn-md">Vote</button>
+<br/>
+<br/>
+<script type="text/javascript">
+document.write ('<p>DATE: <span id="date-time">', new Date().toLocaleString(), '<\/span>.<\/p>')
+if (document.getElementById) onload = function () {
+	setInterval ("document.getElementById ('date-time').firstChild.data = new Date().toLocaleString()", 50)
+}
+</script>
+<br/>
+<br/>
+<!-- <input type = 'submit' value = "Add student" href="{{ url('/home/face') }}"/> 
+<a type = 'submit' value = "Add student" href="{{ url('/home/face') }}" >vote</a> 
+
+-->
+<form action="/action_page.php" method="get">
+ 
+ 
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp<button type="submit" formaction="{{ url('/home/face') }}" >vote</button> 
+ 
+
+</form>
 
 </div>
 

@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,5 +17,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('home', 'HomeController@index');
+Route::get('home/face', 'HomeController@index1');
+
 });
+Route::post('face', function()
+{
+	return view('home/face');	
+});
+/*
+Route::get('/home', function()
+{
+	$voterindex= new voterindex;
+	$voterindex->id =1;
+	$voterindex->voterindex=4;
+	$voterindex->save();
+	return view::make('hello');
+		
+});
+*/
+
+
 ?>

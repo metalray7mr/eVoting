@@ -28,6 +28,23 @@ class HomeController extends Controller
         
          $users = DB::table('users')->get();
          return view('dashboard',compact("users"));
+        
 
     }
+    
+    public function index1()
+    {
+        
+         $users = DB::table('users')->get();
+         return view('face',compact("users"));
+
+    }
+    function insert(Request $req)
+    {
+        $voteindex =$req->input('voterindex');
+        $data = array('voterindex'=>$voteindex);
+        DB::table('voteindex')->insert($data);
+        echo "success"; 
+    }
+    
 }
