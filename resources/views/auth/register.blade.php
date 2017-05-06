@@ -42,7 +42,7 @@
 
                             <div class="col-md-6">
                                 <select  id="Gender" type="Gender" name="Gender" class="form-control">
-								<option value="">   </option>
+								
 								<option value="Male" value="{{ old('Gender') }}" required autofocus>Male</option>
 								<option value="Female" value="{{ old('Gender') }}" required autofocus>Female</option>
 								</select>
