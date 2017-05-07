@@ -11,7 +11,8 @@
 <meta name ="viewport" content="width=device-width,initial-scale=1">
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<style type="button.css"></style>
+
+
 </head>
 <body>
 
@@ -29,20 +30,20 @@
 
 <br/><br/><div class="input-group input-group-sm">
 <span class="input-group-addon">Name</span>
-<input type="text" name="" class="form-control"  placeholder="{{Auth::user()->name }}">
+<input type="text" name="" class="form-control"  placeholder="{{Auth::user()->name }}" readonly>
 </div><br/>
 <div class = "input-group input-group-sm">
 <span class="input-group-addon">Gender</span>
-<input type="text" name="" class="form-control" placeholder="{{Auth::user()->Gender }}">
+<input type="text" name="" class="form-control" placeholder="{{Auth::user()->Gender }}" readonly>
 </div><br/>
 
 <div class="input-group input-group-sm">
 <span class="input-group-addon">D.O.B.</span>
-<input type="" name="" class="form-control" placeholder="{{Auth::user()->dob }}">
+<input type="" name="" class="form-control" placeholder="{{Auth::user()->dob }}" readonly>
 </div><br/>
 <div class="input-group input-group-sm">
 <span class="input-group-addon">VOTER I.D.</span>
-<input type="" name="" class="form-control" placeholder="{{Auth::user()->id }}">
+<input type="" name="" class="form-control" placeholder="{{Auth::user()->id }}" readonly>
 </div>
 </div>
 
@@ -87,7 +88,7 @@ if (document.getElementById) onload = function () {
 <form action="/action_page.php" method="get">
  
  
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp<button type="submit" formaction="{{ url('/home/face') }}" >vote</button> 
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp<button type="submit" class="button" formaction="{{ url('/home/face') }}" >vote</button> 
  
 
 </form>

@@ -13,13 +13,16 @@
 
 Route::group(['middleware'=>'web'],function(){
 Auth::routes();
-Route::get('/', function () {
+Route::get('/', function (){
     return view('welcome');
 });
 Route::get('home', 'HomeController@index');
 Route::get('home/face', 'HomeController@index1');
-
+/*Route::get('file', 'testing@index');
+Route::post('store', 'testing@store');
+*/
 });
+
 Route::post('face', function()
 {
 	return view('home/face');	
@@ -35,6 +38,4 @@ Route::get('/home', function()
 		
 });
 */
-
-
 ?>
