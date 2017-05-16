@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-
+                    e-VOTING
                 </div>
 
                 <div class="links">

@@ -67,7 +67,7 @@
                                         </a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="{{ url('auth/logout') }}">
+                                        <a href="/logout">
                                             LOGOUT
                                         </a>
                                     </li>

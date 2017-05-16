@@ -30,5 +30,10 @@ class logincontroller extends BaseController
    		echo "Login not successful";
    	}
    }
+
+   public function logout(){
+      return view('welcome');
+
+   }
 }
 ?>
