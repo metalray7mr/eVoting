@@ -50,4 +50,7 @@ class HomeController extends Controller
    {
     return view('about');
    }
+    public function save(Request $request) {
+       dd($request, $request->all());
+    }
 }

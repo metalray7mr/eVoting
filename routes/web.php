@@ -38,11 +38,12 @@ Route::get('/tests/{tst}','TestsController@show');
 Route::get('/', function () {
     return view('welcome');
 });
-
 /*
+<<<<<<< HEAD
+*/
 
 
-Route::get('/dashboard', function () {
+/*Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
@@ -69,3 +70,8 @@ Route::get('/about','HomeController@about');
 
 
 //});
+
+
+Route::get('/home', 'HomeController@index');
+Route::post('/party/save', 'HomeController@save');
+
