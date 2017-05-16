@@ -11,15 +11,42 @@
 |
 */
 
+Route::get('/info', function () {
+
+
+	//$info = DB::table('info')->get();
+	$info = App\Info::all();
+
+    return view('info.index',compact('info'));
+});
+
+
+Route::get('/info/{inf}', function ($id) {
+$info= App\Info::find($id);
+
+//dd($info);
+return view('/info.show',compact('info'));
+});
+
+Route::get('/tests','TestsController@index');
+Route::get('/tests/{tst}','TestsController@show');
+
+
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
-/*Route::get('/', function () {
+Route::get('/', function () {
     return view('login');
 });
 */
