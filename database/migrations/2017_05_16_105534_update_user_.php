@@ -13,9 +13,9 @@ class UpdateUser extends Migration
      */
     public function up()
         {
-       Schema::table('voter_infos', function (Blueprint $table) {
+        Schema::table('voter_infos', function (Blueprint $table) {
             $table->integer('user_id')->unsigned()->nullable();
-        });
+         });
    }
     
 

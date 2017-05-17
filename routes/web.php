@@ -12,8 +12,6 @@
 */
 
 Route::get('/info', function () {
-
-
 	//$info = DB::table('info')->get();
 	$info = App\Info::all();
 
@@ -30,9 +28,15 @@ return view('/info.show',compact('info'));
 
 Route::get('/tests','TestsController@index');
 Route::get('/tests/{tst}','TestsController@show');
+Route::get('/party','PartyController@index');
 
+Route::get('/blogview',function(){
 
+	return view('blog.blogcontent');
+});
+Route::post('/voted', 'UserController@vote');
 
+Route::get('admin/dashboard', 'AdminController@dashboard');
 
 
 Route::get('/', function () {

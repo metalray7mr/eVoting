@@ -23,13 +23,10 @@
 </head>
 <body>
 
-
+<form name="votesubmit" method="post" action="/voted">
+ {{ csrf_field() }}
 <div class="container" style="padding-top: inherit;">
-
-
-
-
-<div class="rows">
+<div class="rows" >
 <!--
 <div class="col-lg-3 col-md-3 col-sm-5 col-xs-8 col-lg-offset-3 ">
 <br/>
@@ -59,7 +56,7 @@
 
 
 
-<img src="/pictures/brand.png" height="150" width="200" border="1" style="border: black;border-style:double">
+<img id="party_profile_image" src="/images/party1.png" height="150" width="200" border="1" style="border: black;border-style:double">
 
 <div class="selfclass col-lg-3 col-md-3 col-sm-5 col-xs-8 col-lg-offset-1">
 
@@ -68,20 +65,20 @@
 
 <div class = "input-group input-group-md" style="padding-bottom:25px">
 <span class = "input-group-addon">Vote For :</span>
-<select class="form-control">
-	@foreach($party as $p)
-	<option value="{{$p['name']}}"> {{ $p['name'] }}</option>
+<select class="form-control" id= "party_list" name = "party_id">
+	@foreach($parties as $p)
+	<option value="{{$p->id}}" data-image = "{{ $p->profile_image_url }}" > {{ $p->pname }}</option>
 	@endforeach
 </select>
 <br/>
 </div>
 <div class="input-group input-group-md">
 <span class = "input-group-addon">DATE</span>
-<input type="date" class="form-control" name="">
+<input readonly="readonly" type="text" class="form-control" name="vote_date" value="{{ (new DateTime())->format('F-j-Y') }}">
 </div><br/>
 <div class="input-group input-group-md">
 <span class = "input-group-addon">TIME</span>
-<input type="time" class="form-control" name="">
+<input readonly="readonly" type="text" class="form-control" name="vote_time" id="shtime">
 </div>
 <br/>
 <br/>
@@ -93,10 +90,17 @@
 </div>
 
 </div>
-<button type="submit" class="btn btn-success btn-md" style="padding-left: inherit;
-    margin-left: 128px;
+
+@if(Auth::user()->info->pvoted) 
+<button disabled="disabled" type="submit" class="btn btn-success btn-md" style="margin-left: 128px;
     margin-right: 25px">Vote</button>
-<button type="submit" class="btn btn-default btn-md" style="padding-left: inherit">Abort</button>
+ @else 
+<button  type="submit" class="btn btn-success btn-md" style="margin-left: 128px;
+    margin-right: 25px">Vote</button>
+@endif
+
+<button type="submit" class="btn btn-default btn-md">Abort</button>
+</form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
 </body>

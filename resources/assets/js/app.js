@@ -13,8 +13,28 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
 
-const app = new Vue({
-    el: '#app'
+
+$(document).ready(function() {
+	startTime();
+    $('#party_list').on('change', function() {
+       var selectedParty = $("option:selected", this).attr('data-image');
+       $('#party_profile_image').attr('src', selectedParty);
+    });
 });
+
+
+function startTime() {
+     var today = new Date();
+     var h = today.getHours();
+     var m = today.getMinutes();
+     var s = today.getSeconds();
+     m = checkTime(m);
+     s = checkTime(s);
+     $('#shtime').val(h + ":" + m + ":" + s);
+     var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}

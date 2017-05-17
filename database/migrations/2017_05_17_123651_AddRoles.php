@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateUserInfoTableWithPartyId extends Migration
+class AddRoles extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class UpdateUserInfoTableWithPartyId extends Migration
      */
     public function up()
     {
-       Schema::table('voter_infos', function (Blueprint $table) {
-            $table->integer('pvoted')->unsigned()->nullable();
-        });
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('rolename')->default('user');
+         });
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\PartyTable;
 
 class HomeController extends Controller
 {
@@ -21,24 +22,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-       
-       // $party = DB::table('party')->get();
-
-         $party[0] = ['name' => 'Party 1'];
-         $party[1] = ['name' => 'Party 2'];
-         $party[2] = ['name' => 'Party 3'];
-         $party[3] = ['name' => 'Party 4'];
-         $party[4] = ['name' => 'Party 5'];
-        
-
-       // dd($party);
-
-       return view('dashboard')->with('party', $party);
-       // return view('dashboard', compact('party'));
-       // return view('dashboard');
-
+    public function index() {
+       $parties=PartyTable::all();
+       return view('dashboard',compact('parties'));
     }
 
    public function help()

@@ -15,6 +15,10 @@
     <h3> {{ Auth::user()->email }}</h3>
   </div>
 
+  <div>
+    <h3> {{ Auth::user()->info->dob }}</h3>
+  </div>
+
 </div>
 
 

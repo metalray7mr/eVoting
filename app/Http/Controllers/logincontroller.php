@@ -23,6 +23,7 @@ class logincontroller extends BaseController
 
    	if(count($checkLogin) > 0)
    	{
+         
    		return view('dashboard');
 
    	}else

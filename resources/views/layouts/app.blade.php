@@ -26,7 +26,7 @@
                     <div class="row">
                         <div class="col-xs-12 visible-xs">
                             <div class="navbar-header">
-                                <!-- Collapsed Hamburger -->
+                                <!-- Collapsed Hamburger --><!--
                                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                                 <span class="sr-only">Toggle Navigation</span>
                                 <span class="icon-bar"></span>
@@ -39,7 +39,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-sm-3 hidden-xs navbar-header">
+                        <div class="col-sm-3 hidden-xs navbar-header ">
                             <!-- Branding Image -->
                             
                             @if (Auth::check())
