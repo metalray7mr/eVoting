@@ -23,13 +23,12 @@
     <body>
        
        <ul class="nav nav-tabs">
-        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation" ><a href="/admin">Home</a></li>
          <li role="presentation"><a href="/info">info</a></li>
-         <li role="presentation"><a href="/adminau">Authorize</a></li>
+         <li role="presentation" class="active"><a href="#">Authorize</a></li>
         </ul>
-       <h1> Hello Amin </h1>
+      
         
     </body>
     
 </html>
-

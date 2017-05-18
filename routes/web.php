@@ -69,6 +69,10 @@ Route::get('/home', 'HomeController@index');
 Route::get('/help', 'HomeController@help');
 Route::get('/about','HomeController@about');
 Route::get('/logout','Auth\LoginController@logout');
+Route::get('/info', 'AdminController@info');
+Route::get('/admin','AdminController@dashboard');
+Route::get('/adminau','AdminController@adminau');
+
 //Route::get('/demo', function() {
 	//$users = DB::table('users')->get();
 	//echo {{$users[0]->id}};
