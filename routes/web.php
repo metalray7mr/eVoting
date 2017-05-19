@@ -35,6 +35,8 @@ Route::get('/blogview',function(){
 	return view('blog.blogcontent');
 });
 Route::post('/voted', 'UserController@vote');
+Route::get('/profile','UserController@profile');
+Route::post('/profile','UserController@update_avatar');
 Route::post('/authorized','AdminController@authorized');
 
 Route::get('admin/dashboard', 'AdminController@dashboard');

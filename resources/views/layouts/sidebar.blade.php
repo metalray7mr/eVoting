@@ -3,7 +3,7 @@
     <h4> {{ Auth::user()->name }} </h4>
 </div>
 <div class="sidebar_menu center">
-    <img src="/images/user.png" class="profile_img_sidebar" onerror="this.src = '{{URL::asset('images/default_profile.png')}}'">
+    <img src="/uploads/avatars/{{Auth::user()->avatar}}" class="profile_img_sidebar" onerror="this.src = '{{URL::asset('images/default_profile.png')}}'">
 </div>
 
 <div class="row">

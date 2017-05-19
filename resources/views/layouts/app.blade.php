@@ -43,13 +43,14 @@
                             <!-- Branding Image -->
                             
                             @if (Auth::check())
-                            <img src="/images/demo.png  }}" class="organization_logo" onerror="">
+                            <img src= "/uploads/avatars/{{Auth::user()->avatar}}" style="width:32px; height:32px;position: absolute; top:10px; left:10px;border-radius: 50%" class="organization_logo" onerror="">
                             @endif
-                        </div>
-                        <div class="col-sm-6 hidden-xs">
-                            <a class="navbar-brand" href="{{ url('/') }}" >
+                            <a class="navbar-brand" href="{{ url('/') }}" style="position: relative;">
                                 <span style="font-size:1.2em;">Evoting </span>&nbsp;
                             </a>
+                        </div>
+                        <div class="col-sm-6 hidden-xs">
+                            
                         </div>
                         <div class="col-sm-3 hidden-xs">
                             <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -64,6 +65,11 @@
                                     <li class="dropdown">
                                         <a href="#">
                                             SUPPORT
+                                        </a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="/profile">
+                                        PROFILE
                                         </a>
                                     </li>
                                     <li class="dropdown">
