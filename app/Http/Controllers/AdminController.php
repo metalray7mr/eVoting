@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\VoterInfo;
+use App\User;
 
 class AdminController extends Controller
 {
@@ -19,7 +20,14 @@ class AdminController extends Controller
     }
 
     public function adminau(){
-    	return view('/admin.authcontent');
+
+        $users=User::all();
+        $voters=VoterInfo::all();
+
+    	return view('/admin.authcontent',compact('voters','users'));
+        
+                
+        
     }
 
     public function authorized(Request $request){

@@ -8,6 +8,23 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{{ config('app.name', 'EVoting') }}</title>
         <!-- Styles -->
+        <style type="text/css">
+            .table-fixed thead {
+  width: 97%;
+}
+.table-fixed tbody {
+  height: 120px;
+  overflow-y: auto;
+  width: 100%;
+}
+.table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
+  display: block;
+}
+.table-fixed tbody td, .table-fixed thead > tr> th {
+  float: left;
+  border-bottom-width: 0;
+}
+        </style>
 
         </style>
         <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
@@ -32,7 +49,9 @@
         </ul>
  
     <div class="container" style="margin-top: 30px">
+    <div class="rows">
     @yield('content')
+    </div>
     </div>
     </body>
     

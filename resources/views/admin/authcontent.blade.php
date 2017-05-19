@@ -1,6 +1,7 @@
 @extends('admin.authorize')
 @section('content')
 
+
 <div class ="col-lg-4">
 <div class="panel panel-primary">
 <div class="panel-heading">
@@ -42,28 +43,34 @@
 </div>
 </div>
 </div>
+
+
+
+
 <div class ="col-lg-7">
 <div class="panel panel-primary">
 <div class="panel-heading">
-<h4 class="panel-heading">Registered Users</h4>
+<h4 class="panel-heading">Authorized Users</h4>
 </div>
-<div class="panel-body"  style="max-height: 10;overflow-y: scroll;">
+<div class="panel-body">
 <table class="table table-fixed">
 	<thead class="thead-default">
 	<tr>
-	<th>#</th>
-	<th>Full Name</th>
-	<th>Gender</th>
-    <th>Voter I.D.</th>
+	<th class="col-xs-1">ID</th>
+	<th class="col-xs-4">Name</th>
+	<th class="col-xs-4">Gender</th>
+	<th class="col-xs-2">DOB</th>
 	</tr>
 	</thead>
 	<tbody>
+	@foreach($voters as $voter)
 	<tr>
-	<td>1</td>
-	<td>Gaurav Negi</td>
-	<td>male</td>
-	<td>1003</td>
+	<td class="col-xs-1">{{$voter->voterid}}</td>
+	<td class="col-xs-4">{{$voter->name}}</td>
+	<td class="col-xs-4">{{$voter->dob}}</td>
+	<td class="col-xs-2">{{$voter->gender}}</td>
 	</tr>
+	@endforeach
 	</tbody>
 </table>
 </div>
@@ -73,29 +80,32 @@
 <div class ="col-lg-7">
 <div class="panel panel-primary">
 <div class="panel-heading">
-<h4 class="panel-heading">Authorised Users</h4>
+<h4 class="panel-heading">Registered Users</h4>
 </div>
-<div class="panel-body"  style="max-height: 10;overflow-y: scroll;">
-<table class="table ">
+<div class="panel-body">
+<table class="table table-fixed">
 	<thead class="thead-default">
 	<tr>
-	<th>#</th>
-	<th>Full Name</th>
-	<th>Gender</th>
-    <th>Voter I.D.</th>
+	<th class="col-xs-1">#</th>
+	<th class="col-xs-5">Name</th>
+	<th class="col-xs-4">Gender</th>
+	<th class="col-xs-1">ID</th>
 	</tr>
 	</thead>
 	<tbody>
+	@foreach($users as $user)
 	<tr>
-	<td>1</td>
-	<td>Gaurav Negi</td>
-	<td>male</td>
-	<td>1003</td>
+	<td class="col-xs-1">{{$user->id}}</td>
+	<td class="col-xs-3">{{$user->name}}</td>
+	<td class="col-xs-2">GENDER</td>
+	<td class="col-xs-1">VOTERID</td>
 	</tr>
+	@endforeach
 	</tbody>
 </table>
 </div>
 </div>
 </div>
+
 
 @endsection
