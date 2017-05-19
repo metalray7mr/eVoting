@@ -39,6 +39,7 @@
 	<th>D.O.B.</th>
 	<th>P. Voted</th>
 	</tr>
+	</thead>
 	<tbody>
 	@foreach($infos as $info)
 	<tr>
@@ -50,7 +51,7 @@
 	</tr>
 	@endforeach	
 	</tbody>
-	</thead>
+	
 </table>
 </div>
 
