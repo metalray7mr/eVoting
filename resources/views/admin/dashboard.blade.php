@@ -26,6 +26,7 @@
         <li role="presentation" class="active"><a href="#">Home</a></li>
          <li role="presentation"><a href="/info">info</a></li>
          <li role="presentation"><a href="/adminau">Authorize</a></li>
+         <li role="presentation" align = "right"><a href="/logout">Logout</a></li>
         </ul>
        <h1> Hello Amin </h1>
         

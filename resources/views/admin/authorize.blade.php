@@ -26,9 +26,11 @@
         <li role="presentation" ><a href="/admin">Home</a></li>
          <li role="presentation"><a href="/info">info</a></li>
          <li role="presentation" class="active"><a href="#">Authorize</a></li>
+           <li role="presentation" align = "right"><a href="/logout">Logout</a></li>
         </ul>
-      
-        
+   <div class="container">
+    @yield('content')
+</div>
     </body>
     
 </html>
