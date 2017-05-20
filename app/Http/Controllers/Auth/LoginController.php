@@ -42,6 +42,11 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
 
+        if(!$user->info) {
+            $request->session()->flush();
+            return 'Please contact your Admin';
+        }
+
         if(Auth::user()->rolename == 'admin') {
             return redirect('/admin/dashboard');
         }

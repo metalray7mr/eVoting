@@ -38,9 +38,11 @@ Route::post('/voted', 'UserController@vote');
 Route::get('/profile','UserController@profile');
 Route::post('/profile','UserController@update_avatar');
 Route::post('/authorized','AdminController@authorized');
-
+Route::get('/result','AdminController@results');
 Route::get('admin/dashboard', 'AdminController@dashboard');
 
+
+Route::get('/regsuccess','UserController@regsuccess');
 
 Route::get('/', function () {
     return view('welcome');

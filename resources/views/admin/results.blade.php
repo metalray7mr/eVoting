@@ -21,11 +21,14 @@
 
 <ul class="nav nav-tabs">
   <li role="presentation"><a href="/admin">Home</a></li>
-  <li role="presentation" class="active"><a href="#">Info</a></li>
+  <li role="presentation" "><a href="/info">Info</a></li>
   <li role="presentation"><a href="/adminau">Authorize</a></li>
-  <li role="presentation"><a href="/result">View Results</a></li>
+  <li role="presentation" class="active"><a href="#">View Results</a></li>
     <li role="presentation" align = "right"><a href="/logout">Logout</a></li>
 </ul>
+
+<!-- <h1>{{$vInfo->where('pvoted',2)->count()}}</h1> -->
+
 <div class="container">
 <h1></h1>	
 </div>
@@ -34,23 +37,19 @@
 <table class="table">
 	<thead class="thead-default">
 	<tr>
-	<th>Voter I.D.</th>
-	<th>Name</th>
-	<th>Gender</th>
-	<th>D.O.B.</th>
-	<th>P. Voted</th>
+	<th>Party I.D</th>
+	<th>Party Name</th>
+	<th>Votes Achieved</th>
 	</tr>
 	</thead>
 	<tbody>
-	@foreach($infos as $info)
+	@foreach($parties as $party)
 	<tr>
-	<td>{{$info->voterid}}</td>
-	<td>{{$info->name}}</td>
-	<td>{{$info->gender}}</td>
-	<td>{{$info->dob}}</td>
-	<td>{{$info->pvoted}}</td>
+	<td>{{$party->id}}</td>
+	<td>{{$party->pname}}</td>
+	<td>{{$vInfo->where('pvoted',$party->id)->count()}}</td>
 	</tr>
-	@endforeach	
+	@endforeach
 	</tbody>
 	
 </table>

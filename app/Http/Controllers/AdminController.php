@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\VoterInfo;
+use App\PartyTable;
 use App\User;
 
 class AdminController extends Controller
@@ -28,6 +29,13 @@ class AdminController extends Controller
         
                 
         
+    }
+    public function results(){
+
+        $vInfo=VoterInfo::all();
+        $parties=PartyTable::all();
+        
+       return view('/admin.results',compact('vInfo','parties'));
     }
 
     public function authorized(Request $request){
